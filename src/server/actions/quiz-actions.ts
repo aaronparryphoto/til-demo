@@ -157,7 +157,8 @@ export async function getQuizAttempt(date: string) {
 
   return {
     date: attempt.quiz_date,
-    answers: answers.map((a, index) => ({
+    answers: answers.map((a) => ({
+      questionId: a.question_id,
       selectedAnswerIndex: a.selected_answer_index,
       isCorrect: a.is_correct,
     })),
