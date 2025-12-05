@@ -21,7 +21,7 @@ export interface QuestionsTable {
   id: string;                                                        // PK like "hist_001"
   category: 'History' | 'Science' | 'Geography' | 'Pop Culture' | 'Politics';
   question_text: string;                                             // The question
-  options: string;                                                   // JSONB array of 4 strings
+  options: string[] | string;                                        // JSONB array of 4 strings (may be parsed or stringified)
   correct_answer_index: number;                                      // 0-3
   explanation: string | null;                                        // Optional explanation
   difficulty: 'easy' | 'medium' | 'hard' | null;                     // Optional difficulty

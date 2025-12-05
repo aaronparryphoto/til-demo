@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Question, AnswerState } from '@/lib/types';
 import { CategoryBadge } from './CategoryBadge';
 import { AnswerOption } from './AnswerOption';
@@ -17,6 +17,12 @@ interface QuestionCardProps {
 export function QuestionCard({ question, onAnswerSubmit }: QuestionCardProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isRevealed, setIsRevealed] = useState(false);
+
+  // Reset state when question changes
+  useEffect(() => {
+    setSelectedIndex(null);
+    setIsRevealed(false);
+  }, [question.id]);
 
   const handleOptionSelect = (index: number) => {
     if (isRevealed) return;

@@ -60,21 +60,21 @@ export function OnboardingModal({ isOpen, onComplete, currentName = '' }: Onboar
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-40 backdrop-blur-sm">
       {/* Modal content - non-dismissible */}
-      <div className="relative bg-white rounded-lg shadow-xl max-w-md w-full p-6 my-8">
+      <div className="relative bg-white rounded-card shadow-elevated max-w-md w-full p-8 my-8 animate-slide-up">
         {/* Header */}
-        <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold text-text-primary mb-2">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-text-primary mb-3 heading-title">
             Welcome to TIL Trivia!
           </h2>
-          <p className="text-text-secondary">
+          <p className="text-base text-text-secondary">
             Let&apos;s personalize your experience
           </p>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5">
           {/* Name input */}
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-text-primary mb-2">
@@ -92,8 +92,8 @@ export function OnboardingModal({ isOpen, onComplete, currentName = '' }: Onboar
                   setErrors((prev) => ({ ...prev, name: validation.error || '' }));
                 }
               }}
-              className={`w-full px-4 py-2.5 bg-white border rounded-lg text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent ${
-                errors.name ? 'border-red-500' : 'border-border-default'
+              className={`w-full px-4 py-3.5 bg-white border-2 rounded-button text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-all ${
+                errors.name ? 'border-accent-error' : 'border-border-default'
               }`}
               placeholder="Enter your name"
               disabled={isPending}
@@ -123,8 +123,8 @@ export function OnboardingModal({ isOpen, onComplete, currentName = '' }: Onboar
                   setErrors((prev) => ({ ...prev, email: validation.error || '' }));
                 }
               }}
-              className={`w-full px-4 py-2.5 bg-white border rounded-lg text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent ${
-                errors.email ? 'border-red-500' : 'border-border-default'
+              className={`w-full px-4 py-3.5 bg-white border-2 rounded-button text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-all ${
+                errors.email ? 'border-accent-error' : 'border-border-default'
               }`}
               placeholder="your@email.com"
               disabled={isPending}
@@ -136,7 +136,7 @@ export function OnboardingModal({ isOpen, onComplete, currentName = '' }: Onboar
 
           {/* Warning message */}
           {showEmailWarning && (
-            <div className="flex items-start gap-3 p-3.5 bg-yellow-50 border border-yellow-200 rounded-lg">
+            <div className="flex items-start gap-3 p-4 bg-yellow-50 border border-yellow-200 rounded-button">
               <span className="text-xl flex-shrink-0">⚠️</span>
               <p className="text-sm text-yellow-800 leading-relaxed">
                 Without an email, your progress won&apos;t be saved if you lose your session
@@ -145,7 +145,7 @@ export function OnboardingModal({ isOpen, onComplete, currentName = '' }: Onboar
           )}
 
           {/* Buttons */}
-          <div className="flex gap-3 pt-4">
+          <div className="flex gap-3 pt-6">
             <Button
               type="button"
               variant="secondary"

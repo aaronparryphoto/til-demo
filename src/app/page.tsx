@@ -53,18 +53,18 @@ export default function Home() {
         currentName={currentUserName}
       />
 
-      <main className="min-h-screen py-8 sm:py-12">
+      <main className="min-h-screen py-12 sm:py-16">
         <Container>
-        <div className="max-w-2xl mx-auto space-y-8">
+        <div className="max-w-2xl mx-auto space-y-10">
           {/* Hero section */}
           <div className="text-center space-y-4">
-            <h1 className="text-4xl sm:text-5xl font-bold text-text-primary">
+            <h1 className="text-5xl sm:text-6xl font-bold text-text-primary heading-display">
               TIL Trivia
             </h1>
-            <p className="text-lg text-text-secondary">
+            <p className="text-xl text-text-secondary font-medium">
               Test your knowledge with 5 daily questions
             </p>
-            <p className="text-sm text-text-tertiary">
+            <p className="text-base text-text-tertiary">
               {formatDate(date)}
             </p>
           </div>
@@ -76,12 +76,12 @@ export default function Home() {
                 <p className="text-text-secondary">Loading...</p>
               </div>
             ) : hasCompletedToday ? (
-              <div className="space-y-4">
-                <div className="text-6xl">🎉</div>
-                <h2 className="text-2xl font-semibold text-text-primary">
+              <div className="space-y-6">
+                <div className="text-7xl">🎉</div>
+                <h2 className="text-3xl font-bold text-text-primary">
                   You&apos;ve completed today&apos;s quiz!
                 </h2>
-                <p className="text-text-secondary">
+                <p className="text-lg text-text-secondary">
                   You scored {todayAttempt.score} out of 5
                 </p>
                 <div className="pt-4">
@@ -96,20 +96,20 @@ export default function Home() {
             ) : (
               <div className="space-y-6">
                 <div>
-                  <h2 className="text-2xl font-semibold text-text-primary mb-2">
+                  <h2 className="text-3xl font-bold text-text-primary mb-3">
                     Ready to play?
                   </h2>
-                  <p className="text-text-secondary">
+                  <p className="text-lg text-text-secondary">
                     Answer 5 questions across different categories
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-2 justify-center">
+                <div className="flex flex-wrap gap-3 justify-center">
                   {['History', 'Science', 'Geography', 'Pop Culture', 'Politics'].map(
                     (category) => (
                       <span
                         key={category}
-                        className="px-3 py-1 bg-bg-secondary text-text-secondary rounded-full text-sm"
+                        className="px-4 py-2 bg-bg-secondary text-text-secondary rounded-badge text-sm font-semibold border border-border-light hover:border-border-default transition-colors"
                       >
                         {category}
                       </span>
@@ -128,27 +128,27 @@ export default function Home() {
 
           {/* How it works */}
           <Card>
-            <h3 className="text-lg font-semibold text-text-primary mb-4">
+            <h3 className="text-xl font-bold text-text-primary mb-6">
               How it works
             </h3>
-            <ul className="space-y-3 text-text-secondary">
-              <li className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-white flex items-center justify-center text-sm font-semibold">
+            <ul className="space-y-4 text-text-secondary">
+              <li className="flex items-start gap-4">
+                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent-primary text-white flex items-center justify-center text-base font-bold">
                   1
                 </span>
-                <span>Answer 5 multiple choice questions, one from each category</span>
+                <span className="pt-1">Answer 5 multiple choice questions, one from each category</span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-white flex items-center justify-center text-sm font-semibold">
+              <li className="flex items-start gap-4">
+                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent-primary text-white flex items-center justify-center text-base font-bold">
                   2
                 </span>
-                <span>Get instant feedback and explanations for each answer</span>
+                <span className="pt-1">Get instant feedback and explanations for each answer</span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-white flex items-center justify-center text-sm font-semibold">
+              <li className="flex items-start gap-4">
+                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent-primary text-white flex items-center justify-center text-base font-bold">
                   3
                 </span>
-                <span>Track your streaks and share your results</span>
+                <span className="pt-1">Track your streaks and share your results</span>
               </li>
             </ul>
           </Card>

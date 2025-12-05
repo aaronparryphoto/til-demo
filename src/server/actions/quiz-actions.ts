@@ -69,11 +69,16 @@ export async function getTodaysQuestions(): Promise<QuestionData[]> {
     const dbQuestion = selectByDate(categoryQuestions, dateString, categoryIndex);
 
     // Transform database format to client format
+    // Handle both cases: options might be already parsed (array) or still stringified
+    const options = typeof dbQuestion.options === 'string'
+      ? JSON.parse(dbQuestion.options)
+      : dbQuestion.options;
+
     selectedQuestions.push({
       id: dbQuestion.id,
       category: dbQuestion.category,
       questionText: dbQuestion.question_text,
-      options: JSON.parse(dbQuestion.options),
+      options,
       correctAnswerIndex: dbQuestion.correct_answer_index,
       explanation: dbQuestion.explanation || undefined,
       difficulty: dbQuestion.difficulty || undefined,

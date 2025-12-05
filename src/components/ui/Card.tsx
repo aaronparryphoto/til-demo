@@ -11,14 +11,14 @@ interface CardProps {
 export function Card({ children, className = '', padding = 'md' }: CardProps) {
   const paddingStyles = {
     none: '',
-    sm: 'p-4',
-    md: 'p-6',
-    lg: 'p-8',
+    sm: 'p-5',
+    md: 'p-8',
+    lg: 'p-10',
   };
 
   return (
     <div
-      className={`bg-white border border-border-default rounded-lg ${paddingStyles[padding]} ${className}`}
+      className={`bg-white rounded-card shadow-card border border-border-light ${paddingStyles[padding]} ${className}`}
     >
       {children}
     </div>

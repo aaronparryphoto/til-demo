@@ -2,9 +2,7 @@ import type { Config } from "tailwindcss";
 
 export default {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -12,38 +10,52 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         // Answer states
-        'answer-correct': '#6AAA64',
-        'answer-correct-hover': '#5A9954',
+        'answer-correct': '#5BA55B',
+        'answer-correct-hover': '#4A8F4A',
         'answer-incorrect': '#787C7E',
         'answer-incorrect-hover': '#686C6E',
         'answer-idle': '#FFFFFF',
-        'answer-idle-border': '#D3D6DA',
-        'answer-hover': '#F7F7F7',
-        'answer-selected': '#EFEFEF',
-        'answer-reveal': '#538D4E',
+        'answer-idle-border': '#E0E0E0',
+        'answer-hover': '#F6F7F8',
+        'answer-selected': '#E8E8E8',
+        'answer-reveal': '#5BA55B',
         // Category colors
-        'category-history': '#D4A574',
-        'category-science': '#6FB3E0',
-        'category-geography': '#7EBD8F',
-        'category-popculture': '#E09FB3',
-        'category-politics': '#9D8ABF',
+        'category-history': '#F9A03F',
+        'category-science': '#5FA9E0',
+        'category-geography': '#70B85B',
+        'category-popculture': '#E55C9A',
+        'category-politics': '#9D7ACF',
         // Accent colors
-        'accent-primary': '#000000',
-        'accent-success': '#6AAA64',
-        'accent-warning': '#C9B458',
-        'accent-error': '#D94A4A',
+        'accent-primary': '#121213',
+        'accent-success': '#5BA55B',
+        'accent-warning': '#F9A03F',
+        'accent-error': '#E55C5C',
         // Text colors
-        'text-primary': '#1A1A1A',
-        'text-secondary': '#5A5A5A',
-        'text-tertiary': '#878787',
+        'text-primary': '#121213',
+        'text-secondary': '#787C7E',
+        'text-tertiary': '#A0A0A0',
         // Border colors
-        'border-default': '#DFDFDF',
-        'border-light': '#EFEFEF',
-        'border-strong': '#C4C4C4',
+        'border-default': '#E0E0E0',
+        'border-light': '#F0F0F0',
+        'border-strong': '#C0C0C0',
         // Background variations
         'bg-primary': '#FFFFFF',
-        'bg-secondary': '#F7F7F7',
-        'bg-elevated': '#FAFAFA',
+        'bg-secondary': '#FAFAFA',
+        'bg-elevated': '#FFFFFF',
+      },
+      spacing: {
+        '18': '4.5rem',
+        '22': '5.5rem',
+      },
+      boxShadow: {
+        'subtle': '0 1px 3px 0 rgba(0, 0, 0, 0.08)',
+        'card': '0 2px 8px 0 rgba(0, 0, 0, 0.08)',
+        'elevated': '0 4px 12px 0 rgba(0, 0, 0, 0.1)',
+      },
+      borderRadius: {
+        'button': '8px',
+        'card': '12px',
+        'badge': '20px',
       },
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
@@ -75,7 +87,7 @@ export default {
         },
       },
       maxWidth: {
-        'container': '680px',
+        'container': '600px',
       },
     },
   },

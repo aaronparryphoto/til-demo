@@ -19,15 +19,15 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    'font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
+    'font-bold rounded-button transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]';
 
   const variantStyles = {
     primary:
-      'bg-accent-primary text-white hover:bg-opacity-90 focus:ring-accent-primary px-6 py-3 text-base',
+      'bg-accent-primary text-white hover:bg-opacity-90 focus:ring-accent-primary px-8 py-4 text-base shadow-subtle hover:shadow-card',
     secondary:
-      'bg-white text-text-primary border-2 border-border-default hover:bg-bg-secondary focus:ring-border-strong px-6 py-3 text-base',
+      'bg-white text-text-primary border-2 border-border-default hover:bg-bg-secondary focus:ring-border-strong px-8 py-4 text-base shadow-subtle hover:shadow-card',
     answer:
-      'bg-white text-text-primary border-2 border-answer-idle-border hover:bg-answer-hover focus:ring-answer-idle-border px-4 py-3 text-left text-base min-h-[56px]',
+      'bg-white text-text-primary border-2 border-answer-idle-border hover:bg-answer-hover hover:border-border-strong focus:ring-answer-idle-border px-5 py-4 text-left text-base min-h-[64px] shadow-subtle',
   };
 
   const widthStyles = fullWidth ? 'w-full' : '';

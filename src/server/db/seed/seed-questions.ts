@@ -1,6 +1,7 @@
 // Seed questions from questions.json into the database
 
 import { db } from '@/server/connections/db';
+import { sql } from 'kysely';
 import questionsData from '../../../../data/questions.json';
 
 interface QuestionData {
@@ -33,7 +34,7 @@ export async function seedQuestions() {
           id: q.id,
           category: q.category,
           question_text: q.questionText,
-          options: JSON.stringify(q.options),
+          options: sql`${JSON.stringify(q.options)}::jsonb`,
           correct_answer_index: q.correctAnswerIndex,
           explanation: q.explanation || null,
           difficulty: q.difficulty || null,
