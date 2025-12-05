@@ -3,11 +3,12 @@
 import { Generated, Insertable, Selectable, Updateable } from 'kysely';
 
 /**
- * Users table - tracks individual users with optional phone number
+ * Users table - tracks individual users with optional email and phone number
  */
 export interface UsersTable {
   id: Generated<string>;               // UUID, auto-generated
   name: string;                         // User's name
+  email: string | null;                 // Optional email for account recovery
   phone_number: string | null;          // Optional phone number
   created_at: Generated<Date>;          // Auto-generated timestamp
   updated_at: Generated<Date>;          // Auto-updated timestamp

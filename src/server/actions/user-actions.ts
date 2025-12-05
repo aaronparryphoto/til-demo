@@ -64,10 +64,27 @@ export async function ensureUser(): Promise<string> {
 }
 
 /**
+ * Check if the current user needs to complete onboarding
+ * Returns true if user has auto-generated name (starts with "User ")
+ */
+export async function needsOnboarding(): Promise<boolean> {
+  const user = await getCurrentUser();
+
+  // No user exists, needs onboarding
+  if (!user) {
+    return true;
+  }
+
+  // Check if name is auto-generated (starts with "User ")
+  return user.name.startsWith('User ');
+}
+
+/**
  * Update the current user's profile
  */
 export async function updateUserProfile(data: {
   name?: string;
+  email?: string;
   phone_number?: string;
 }): Promise<User> {
   const userId = await ensureUser();
@@ -76,6 +93,7 @@ export async function updateUserProfile(data: {
     .updateTable('users')
     .set({
       ...(data.name && { name: data.name }),
+      ...(data.email !== undefined && { email: data.email }),
       ...(data.phone_number !== undefined && { phone_number: data.phone_number }),
     })
     .where('id', '=', userId)

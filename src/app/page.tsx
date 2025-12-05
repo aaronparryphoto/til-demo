@@ -9,11 +9,15 @@ import { useDailyQuiz } from '@/hooks/useDailyQuiz';
 import { getQuizAttempt } from '@/lib/quiz-storage';
 import { formatDate } from '@/lib/date-utils';
 import { QuizAttempt } from '@/lib/types';
+import { OnboardingModal } from '@/components/onboarding/OnboardingModal';
+import { needsOnboarding, getCurrentUser } from '@/server/actions/user-actions';
 
 export default function Home() {
   const { date, isReady } = useDailyQuiz();
   const [todayAttempt, setTodayAttempt] = useState<QuizAttempt | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [showOnboardingModal, setShowOnboardingModal] = useState(false);
+  const [currentUserName, setCurrentUserName] = useState('');
 
   useEffect(() => {
     const attempt = getQuizAttempt(date);
@@ -21,11 +25,36 @@ export default function Home() {
     setIsLoading(false);
   }, [date]);
 
+  // Check if user needs onboarding
+  useEffect(() => {
+    async function checkOnboarding() {
+      const needs = await needsOnboarding();
+      if (needs) {
+        const user = await getCurrentUser();
+        setCurrentUserName(user?.name || '');
+        setShowOnboardingModal(true);
+      }
+    }
+    checkOnboarding();
+  }, []);
+
   const hasCompletedToday = !!todayAttempt;
 
+  const handleOnboardingComplete = () => {
+    setShowOnboardingModal(false);
+  };
+
   return (
-    <main className="min-h-screen py-8 sm:py-12">
-      <Container>
+    <>
+      {/* Onboarding Modal */}
+      <OnboardingModal
+        isOpen={showOnboardingModal}
+        onComplete={handleOnboardingComplete}
+        currentName={currentUserName}
+      />
+
+      <main className="min-h-screen py-8 sm:py-12">
+        <Container>
         <div className="max-w-2xl mx-auto space-y-8">
           {/* Hero section */}
           <div className="text-center space-y-4">
@@ -126,5 +155,6 @@ export default function Home() {
         </div>
       </Container>
     </main>
+    </>
   );
 }
