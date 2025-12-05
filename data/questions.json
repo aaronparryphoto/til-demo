@@ -1,0 +1,679 @@
+{
+  "questions": [
+    {
+      "id": "hist_001",
+      "category": "History",
+      "questionText": "In what year did the Berlin Wall fall?",
+      "options": ["1987", "1989", "1991", "1993"],
+      "correctAnswerIndex": 1,
+      "explanation": "The Berlin Wall fell on November 9, 1989, marking a pivotal moment in the Cold War.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "hist_002",
+      "category": "History",
+      "questionText": "Who was the first President of the United States?",
+      "options": ["Thomas Jefferson", "George Washington", "John Adams", "Benjamin Franklin"],
+      "correctAnswerIndex": 1,
+      "explanation": "George Washington served as the first President from 1789 to 1797.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "hist_003",
+      "category": "History",
+      "questionText": "The Treaty of Versailles ended which war?",
+      "options": ["World War I", "World War II", "The Franco-Prussian War", "The Napoleonic Wars"],
+      "correctAnswerIndex": 0,
+      "explanation": "The Treaty of Versailles was signed in 1919, officially ending World War I.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "hist_004",
+      "category": "History",
+      "questionText": "Which ancient civilization built Machu Picchu?",
+      "options": ["Maya", "Aztec", "Inca", "Olmec"],
+      "correctAnswerIndex": 2,
+      "explanation": "Machu Picchu was built by the Inca Empire in the 15th century in Peru.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "hist_005",
+      "category": "History",
+      "questionText": "In which year did Christopher Columbus first reach the Americas?",
+      "options": ["1482", "1492", "1502", "1512"],
+      "correctAnswerIndex": 1,
+      "explanation": "Columbus reached the Americas in 1492 while searching for a western route to Asia.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "hist_006",
+      "category": "History",
+      "questionText": "Who wrote the 'I Have a Dream' speech?",
+      "options": ["Malcolm X", "Rosa Parks", "Martin Luther King Jr.", "Jesse Jackson"],
+      "correctAnswerIndex": 2,
+      "explanation": "Martin Luther King Jr. delivered his famous 'I Have a Dream' speech during the 1963 March on Washington.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "hist_007",
+      "category": "History",
+      "questionText": "What year did the Titanic sink?",
+      "options": ["1910", "1911", "1912", "1913"],
+      "correctAnswerIndex": 2,
+      "explanation": "The RMS Titanic sank on April 15, 1912, after hitting an iceberg.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "hist_008",
+      "category": "History",
+      "questionText": "The Renaissance began in which country?",
+      "options": ["France", "Germany", "Italy", "Spain"],
+      "correctAnswerIndex": 2,
+      "explanation": "The Renaissance began in Italy in the 14th century, starting in Florence.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "hist_009",
+      "category": "History",
+      "questionText": "Who was the first woman to win a Nobel Prize?",
+      "options": ["Marie Curie", "Rosalind Franklin", "Jane Addams", "Bertha von Suttner"],
+      "correctAnswerIndex": 0,
+      "explanation": "Marie Curie won the Nobel Prize in Physics in 1903, sharing it with her husband Pierre and Henri Becquerel.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "hist_010",
+      "category": "History",
+      "questionText": "The Magna Carta was signed in which year?",
+      "options": ["1115", "1215", "1315", "1415"],
+      "correctAnswerIndex": 1,
+      "explanation": "The Magna Carta was signed in 1215 by King John of England.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "hist_011",
+      "category": "History",
+      "questionText": "Who was the first person to walk on the moon?",
+      "options": ["Buzz Aldrin", "Neil Armstrong", "Yuri Gagarin", "John Glenn"],
+      "correctAnswerIndex": 1,
+      "explanation": "Neil Armstrong became the first human to walk on the moon on July 20, 1969, during the Apollo 11 mission.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "hist_012",
+      "category": "History",
+      "questionText": "The French Revolution began in which year?",
+      "options": ["1776", "1789", "1799", "1804"],
+      "correctAnswerIndex": 1,
+      "explanation": "The French Revolution began in 1789 with the storming of the Bastille on July 14.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "hist_013",
+      "category": "History",
+      "questionText": "Who was the first Emperor of Rome?",
+      "options": ["Julius Caesar", "Augustus", "Nero", "Constantine"],
+      "correctAnswerIndex": 1,
+      "explanation": "Augustus (formerly Octavian) became Rome's first emperor in 27 BCE, ending the Roman Republic.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "hist_014",
+      "category": "History",
+      "questionText": "What year did the Cold War officially end?",
+      "options": ["1989", "1991", "1993", "1995"],
+      "correctAnswerIndex": 1,
+      "explanation": "The Cold War is generally considered to have ended in 1991 with the dissolution of the Soviet Union.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "hist_015",
+      "category": "History",
+      "questionText": "Who invented the printing press?",
+      "options": ["Leonardo da Vinci", "Johannes Gutenberg", "Benjamin Franklin", "Isaac Newton"],
+      "correctAnswerIndex": 1,
+      "explanation": "Johannes Gutenberg invented the movable-type printing press around 1440, revolutionizing the spread of information.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sci_001",
+      "category": "Science",
+      "questionText": "What is the chemical symbol for gold?",
+      "options": ["Go", "Gd", "Au", "Ag"],
+      "correctAnswerIndex": 2,
+      "explanation": "Au comes from the Latin word 'aurum' meaning gold.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "sci_002",
+      "category": "Science",
+      "questionText": "How many bones are in the adult human body?",
+      "options": ["186", "206", "226", "246"],
+      "correctAnswerIndex": 1,
+      "explanation": "The adult human skeleton contains 206 bones, though babies are born with about 270.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sci_003",
+      "category": "Science",
+      "questionText": "What is the speed of light in vacuum?",
+      "options": ["299,792,458 m/s", "199,792,458 m/s", "399,792,458 m/s", "99,792,458 m/s"],
+      "correctAnswerIndex": 0,
+      "explanation": "Light travels at exactly 299,792,458 meters per second in a vacuum.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "sci_004",
+      "category": "Science",
+      "questionText": "What is the largest planet in our solar system?",
+      "options": ["Saturn", "Neptune", "Jupiter", "Uranus"],
+      "correctAnswerIndex": 2,
+      "explanation": "Jupiter is the largest planet, with a mass more than twice that of all other planets combined.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "sci_005",
+      "category": "Science",
+      "questionText": "What is the powerhouse of the cell?",
+      "options": ["Nucleus", "Ribosome", "Mitochondria", "Endoplasmic Reticulum"],
+      "correctAnswerIndex": 2,
+      "explanation": "Mitochondria generate most of the cell's supply of ATP, used as a source of chemical energy.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "sci_006",
+      "category": "Science",
+      "questionText": "What is the most abundant gas in Earth's atmosphere?",
+      "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
+      "correctAnswerIndex": 1,
+      "explanation": "Nitrogen makes up about 78% of Earth's atmosphere, while oxygen is around 21%.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sci_007",
+      "category": "Science",
+      "questionText": "Who developed the theory of general relativity?",
+      "options": ["Isaac Newton", "Niels Bohr", "Albert Einstein", "Stephen Hawking"],
+      "correctAnswerIndex": 2,
+      "explanation": "Albert Einstein published the theory of general relativity in 1915.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "sci_008",
+      "category": "Science",
+      "questionText": "What is the pH of pure water?",
+      "options": ["5", "6", "7", "8"],
+      "correctAnswerIndex": 2,
+      "explanation": "Pure water has a pH of 7, making it neutral on the pH scale.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sci_009",
+      "category": "Science",
+      "questionText": "How many chromosomes do humans have?",
+      "options": ["23", "42", "46", "52"],
+      "correctAnswerIndex": 2,
+      "explanation": "Humans have 46 chromosomes in 23 pairs, with one set from each parent.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sci_010",
+      "category": "Science",
+      "questionText": "What is the hardest natural substance on Earth?",
+      "options": ["Diamond", "Quartz", "Corundum", "Topaz"],
+      "correctAnswerIndex": 0,
+      "explanation": "Diamond ranks 10 on the Mohs hardness scale, making it the hardest natural substance.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "sci_011",
+      "category": "Science",
+      "questionText": "What is the atomic number of carbon?",
+      "options": ["4", "6", "8", "12"],
+      "correctAnswerIndex": 1,
+      "explanation": "Carbon has an atomic number of 6, meaning it has 6 protons in its nucleus.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sci_012",
+      "category": "Science",
+      "questionText": "What type of animal is a Komodo dragon?",
+      "options": ["Snake", "Lizard", "Crocodile", "Dinosaur"],
+      "correctAnswerIndex": 1,
+      "explanation": "The Komodo dragon is the world's largest living lizard, native to Indonesia.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "sci_013",
+      "category": "Science",
+      "questionText": "What is the freezing point of water in Fahrenheit?",
+      "options": ["0°F", "32°F", "100°F", "212°F"],
+      "correctAnswerIndex": 1,
+      "explanation": "Water freezes at 32°F (0°C) and boils at 212°F (100°C) at standard atmospheric pressure.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "sci_014",
+      "category": "Science",
+      "questionText": "What is the study of earthquakes called?",
+      "options": ["Meteorology", "Seismology", "Volcanology", "Geology"],
+      "correctAnswerIndex": 1,
+      "explanation": "Seismology is the scientific study of earthquakes and the propagation of elastic waves through the Earth.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sci_015",
+      "category": "Science",
+      "questionText": "How long does it take for light from the Sun to reach Earth?",
+      "options": ["8 seconds", "8 minutes", "8 hours", "8 days"],
+      "correctAnswerIndex": 1,
+      "explanation": "Light from the Sun takes approximately 8 minutes and 20 seconds to travel the 93 million miles to Earth.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "geo_001",
+      "category": "Geography",
+      "questionText": "What is the capital of Australia?",
+      "options": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+      "correctAnswerIndex": 2,
+      "explanation": "Canberra is Australia's capital, chosen as a compromise between Sydney and Melbourne.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "geo_002",
+      "category": "Geography",
+      "questionText": "Which is the longest river in the world?",
+      "options": ["Amazon", "Nile", "Yangtze", "Mississippi"],
+      "correctAnswerIndex": 1,
+      "explanation": "The Nile River is approximately 6,650 km long, making it the world's longest river.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "geo_003",
+      "category": "Geography",
+      "questionText": "How many continents are there?",
+      "options": ["5", "6", "7", "8"],
+      "correctAnswerIndex": 2,
+      "explanation": "There are 7 continents: Africa, Antarctica, Asia, Europe, North America, Australia/Oceania, and South America.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "geo_004",
+      "category": "Geography",
+      "questionText": "What is the smallest country in the world?",
+      "options": ["Monaco", "Vatican City", "San Marino", "Liechtenstein"],
+      "correctAnswerIndex": 1,
+      "explanation": "Vatican City covers only about 0.44 square kilometers (0.17 square miles).",
+      "difficulty": "medium"
+    },
+    {
+      "id": "geo_005",
+      "category": "Geography",
+      "questionText": "Mount Everest is located in which mountain range?",
+      "options": ["Andes", "Rockies", "Alps", "Himalayas"],
+      "correctAnswerIndex": 3,
+      "explanation": "Mount Everest, the world's highest peak, is located in the Himalayas on the Nepal-China border.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "geo_006",
+      "category": "Geography",
+      "questionText": "Which ocean is the largest?",
+      "options": ["Atlantic", "Indian", "Arctic", "Pacific"],
+      "correctAnswerIndex": 3,
+      "explanation": "The Pacific Ocean covers about 165 million square kilometers, roughly 46% of Earth's water surface.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "geo_007",
+      "category": "Geography",
+      "questionText": "The Great Barrier Reef is located off the coast of which country?",
+      "options": ["Indonesia", "Philippines", "Australia", "New Zealand"],
+      "correctAnswerIndex": 2,
+      "explanation": "The Great Barrier Reef is located in the Coral Sea, off the coast of Queensland, Australia.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "geo_008",
+      "category": "Geography",
+      "questionText": "What is the driest place on Earth?",
+      "options": ["Sahara Desert", "Atacama Desert", "Death Valley", "Antarctica"],
+      "correctAnswerIndex": 3,
+      "explanation": "Antarctica is technically the driest place on Earth, with some areas receiving almost no precipitation.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "geo_009",
+      "category": "Geography",
+      "questionText": "Which country has the most time zones?",
+      "options": ["Russia", "USA", "France", "China"],
+      "correctAnswerIndex": 2,
+      "explanation": "France has 12 time zones due to its overseas territories, more than any other country.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "geo_010",
+      "category": "Geography",
+      "questionText": "The Sahara Desert is located on which continent?",
+      "options": ["Asia", "Australia", "Africa", "South America"],
+      "correctAnswerIndex": 2,
+      "explanation": "The Sahara Desert covers most of Northern Africa and is the world's largest hot desert.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "geo_011",
+      "category": "Geography",
+      "questionText": "What is the capital of Japan?",
+      "options": ["Tokyo", "Kyoto", "Osaka", "Hiroshima"],
+      "correctAnswerIndex": 0,
+      "explanation": "Tokyo has been the capital of Japan since 1868 and is the world's most populous metropolitan area.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "geo_012",
+      "category": "Geography",
+      "questionText": "Which country is both in Europe and Asia?",
+      "options": ["Russia", "Egypt", "Greece", "Iran"],
+      "correctAnswerIndex": 0,
+      "explanation": "Russia spans both continents, with about 77% of its land in Asia and 23% in Europe.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "geo_013",
+      "category": "Geography",
+      "questionText": "What is the largest island in the world?",
+      "options": ["Madagascar", "Greenland", "New Guinea", "Borneo"],
+      "correctAnswerIndex": 1,
+      "explanation": "Greenland is the world's largest island, covering approximately 2.16 million square kilometers.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "geo_014",
+      "category": "Geography",
+      "questionText": "The Amazon Rainforest is primarily located in which country?",
+      "options": ["Venezuela", "Colombia", "Brazil", "Peru"],
+      "correctAnswerIndex": 2,
+      "explanation": "Brazil contains about 60% of the Amazon Rainforest, the world's largest tropical rainforest.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "geo_015",
+      "category": "Geography",
+      "questionText": "What is the tallest mountain in Africa?",
+      "options": ["Mount Kenya", "Mount Kilimanjaro", "Mount Stanley", "Mount Meru"],
+      "correctAnswerIndex": 1,
+      "explanation": "Mount Kilimanjaro in Tanzania stands at 5,895 meters (19,341 feet), making it Africa's highest peak.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pop_001",
+      "category": "Pop Culture",
+      "questionText": "Who played Iron Man in the Marvel Cinematic Universe?",
+      "options": ["Chris Evans", "Robert Downey Jr.", "Chris Hemsworth", "Mark Ruffalo"],
+      "correctAnswerIndex": 1,
+      "explanation": "Robert Downey Jr. portrayed Tony Stark/Iron Man from 2008 to 2019.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pop_002",
+      "category": "Pop Culture",
+      "questionText": "What year was the first iPhone released?",
+      "options": ["2005", "2006", "2007", "2008"],
+      "correctAnswerIndex": 2,
+      "explanation": "The first iPhone was released on June 29, 2007.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pop_003",
+      "category": "Pop Culture",
+      "questionText": "Who wrote the Harry Potter book series?",
+      "options": ["J.R.R. Tolkien", "J.K. Rowling", "Suzanne Collins", "Rick Riordan"],
+      "correctAnswerIndex": 1,
+      "explanation": "J.K. Rowling wrote all seven Harry Potter novels between 1997 and 2007.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pop_004",
+      "category": "Pop Culture",
+      "questionText": "Which artist has won the most Grammy Awards?",
+      "options": ["Michael Jackson", "Beyoncé", "Quincy Jones", "Taylor Swift"],
+      "correctAnswerIndex": 1,
+      "explanation": "Beyoncé holds the record with 32 Grammy Awards as of 2023.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pop_005",
+      "category": "Pop Culture",
+      "questionText": "What streaming service released 'Stranger Things'?",
+      "options": ["Hulu", "Netflix", "Disney+", "Amazon Prime"],
+      "correctAnswerIndex": 1,
+      "explanation": "Stranger Things premiered on Netflix in July 2016.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pop_006",
+      "category": "Pop Culture",
+      "questionText": "Who is known as the 'King of Pop'?",
+      "options": ["Elvis Presley", "Prince", "Michael Jackson", "Freddie Mercury"],
+      "correctAnswerIndex": 2,
+      "explanation": "Michael Jackson earned the title 'King of Pop' for his immense influence on music and entertainment.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pop_007",
+      "category": "Pop Culture",
+      "questionText": "What is the highest-grossing film of all time (not adjusted for inflation)?",
+      "options": ["Titanic", "Avatar", "Avengers: Endgame", "Avatar: The Way of Water"],
+      "correctAnswerIndex": 1,
+      "explanation": "Avatar (2009) reclaimed the top spot after its 2021 re-release, surpassing Avengers: Endgame.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pop_008",
+      "category": "Pop Culture",
+      "questionText": "Which social media platform has a bird as its logo?",
+      "options": ["Facebook", "Instagram", "X (formerly Twitter)", "TikTok"],
+      "correctAnswerIndex": 2,
+      "explanation": "Twitter (now called X) has used a bird logo since its founding in 2006.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pop_009",
+      "category": "Pop Culture",
+      "questionText": "Who directed the movie 'Inception'?",
+      "options": ["Steven Spielberg", "Christopher Nolan", "Quentin Tarantino", "Martin Scorsese"],
+      "correctAnswerIndex": 1,
+      "explanation": "Christopher Nolan wrote and directed Inception, released in 2010.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pop_010",
+      "category": "Pop Culture",
+      "questionText": "What year did the first 'Star Wars' movie premiere?",
+      "options": ["1975", "1977", "1979", "1981"],
+      "correctAnswerIndex": 1,
+      "explanation": "Star Wars: Episode IV - A New Hope was released on May 25, 1977.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pop_011",
+      "category": "Pop Culture",
+      "questionText": "Which band released the album 'Abbey Road'?",
+      "options": ["The Rolling Stones", "The Beatles", "Led Zeppelin", "Pink Floyd"],
+      "correctAnswerIndex": 1,
+      "explanation": "The Beatles released Abbey Road in 1969, featuring the iconic zebra crossing cover photo.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pop_012",
+      "category": "Pop Culture",
+      "questionText": "What is the name of the fictional African country in 'Black Panther'?",
+      "options": ["Wakanda", "Zamunda", "Genovia", "Latveria"],
+      "correctAnswerIndex": 0,
+      "explanation": "Wakanda is the technologically advanced African nation home to Black Panther in the Marvel Universe.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pop_013",
+      "category": "Pop Culture",
+      "questionText": "Who sang the hit song 'Thriller'?",
+      "options": ["Prince", "Michael Jackson", "Madonna", "Whitney Houston"],
+      "correctAnswerIndex": 1,
+      "explanation": "Michael Jackson's 'Thriller' (1982) became the best-selling album of all time.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pop_014",
+      "category": "Pop Culture",
+      "questionText": "Which video game franchise features characters Mario and Luigi?",
+      "options": ["Sonic the Hedgehog", "Super Mario Bros.", "The Legend of Zelda", "Donkey Kong"],
+      "correctAnswerIndex": 1,
+      "explanation": "Mario and Luigi are the iconic plumber brothers from Nintendo's Super Mario Bros. franchise, first appearing in 1983.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pop_015",
+      "category": "Pop Culture",
+      "questionText": "What is the name of the coffee shop in the TV show 'Friends'?",
+      "options": ["Central Perk", "The Daily Grind", "Java Joe's", "Coffee Central"],
+      "correctAnswerIndex": 0,
+      "explanation": "Central Perk was the main hangout spot for the group throughout all 10 seasons of Friends.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pol_001",
+      "category": "Politics",
+      "questionText": "How many branches are there in the U.S. government?",
+      "options": ["2", "3", "4", "5"],
+      "correctAnswerIndex": 1,
+      "explanation": "The U.S. government has three branches: Legislative, Executive, and Judicial.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pol_002",
+      "category": "Politics",
+      "questionText": "Who was the first female Prime Minister of the United Kingdom?",
+      "options": ["Theresa May", "Margaret Thatcher", "Angela Merkel", "Indira Gandhi"],
+      "correctAnswerIndex": 1,
+      "explanation": "Margaret Thatcher served as UK Prime Minister from 1979 to 1990.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pol_003",
+      "category": "Politics",
+      "questionText": "The United Nations headquarters is located in which city?",
+      "options": ["Geneva", "Paris", "New York City", "Brussels"],
+      "correctAnswerIndex": 2,
+      "explanation": "The UN headquarters has been in New York City since 1952.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pol_004",
+      "category": "Politics",
+      "questionText": "How many senators does each U.S. state have?",
+      "options": ["1", "2", "3", "It varies by population"],
+      "correctAnswerIndex": 1,
+      "explanation": "Each state has exactly 2 senators, for a total of 100 in the U.S. Senate.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pol_005",
+      "category": "Politics",
+      "questionText": "What is the minimum age to be President of the United States?",
+      "options": ["30", "35", "40", "45"],
+      "correctAnswerIndex": 1,
+      "explanation": "The U.S. Constitution requires the President to be at least 35 years old.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pol_006",
+      "category": "Politics",
+      "questionText": "Which country has the oldest written constitution still in use?",
+      "options": ["United Kingdom", "United States", "France", "India"],
+      "correctAnswerIndex": 1,
+      "explanation": "The U.S. Constitution, written in 1787 and ratified in 1788, is the world's oldest written constitution still in use.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "pol_007",
+      "category": "Politics",
+      "questionText": "The European Union was officially established by which treaty?",
+      "options": ["Treaty of Rome", "Treaty of Versailles", "Treaty of Maastricht", "Treaty of Lisbon"],
+      "correctAnswerIndex": 2,
+      "explanation": "The Treaty of Maastricht, signed in 1992, established the European Union.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "pol_008",
+      "category": "Politics",
+      "questionText": "Who was the longest-serving U.S. President?",
+      "options": ["George Washington", "Thomas Jefferson", "Franklin D. Roosevelt", "Ronald Reagan"],
+      "correctAnswerIndex": 2,
+      "explanation": "FDR served as president for 12 years (1933-1945), elected to four terms.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pol_009",
+      "category": "Politics",
+      "questionText": "How many countries are permanent members of the UN Security Council?",
+      "options": ["3", "5", "7", "10"],
+      "correctAnswerIndex": 1,
+      "explanation": "The five permanent members are China, France, Russia, the United Kingdom, and the United States.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pol_010",
+      "category": "Politics",
+      "questionText": "What does NATO stand for?",
+      "options": ["North American Treaty Organization", "North Atlantic Treaty Organization", "Nordic Alliance Treaty Organization", "National Atlantic Trade Organization"],
+      "correctAnswerIndex": 1,
+      "explanation": "NATO (North Atlantic Treaty Organization) was established in 1949 as a military alliance.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pol_011",
+      "category": "Politics",
+      "questionText": "Who was the first African American President of the United States?",
+      "options": ["Colin Powell", "Barack Obama", "Jesse Jackson", "Condoleezza Rice"],
+      "correctAnswerIndex": 1,
+      "explanation": "Barack Obama served as the 44th President from 2009 to 2017.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pol_012",
+      "category": "Politics",
+      "questionText": "How many U.S. Supreme Court justices are there?",
+      "options": ["7", "9", "11", "13"],
+      "correctAnswerIndex": 1,
+      "explanation": "The U.S. Supreme Court consists of nine justices: one Chief Justice and eight Associate Justices.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pol_013",
+      "category": "Politics",
+      "questionText": "Which political party does a donkey symbolize in the United States?",
+      "options": ["Republican", "Democratic", "Libertarian", "Green"],
+      "correctAnswerIndex": 1,
+      "explanation": "The donkey has been the symbol of the Democratic Party since the 1870s.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "pol_014",
+      "category": "Politics",
+      "questionText": "In what year did women gain the right to vote in the United States?",
+      "options": ["1900", "1920", "1940", "1960"],
+      "correctAnswerIndex": 1,
+      "explanation": "The 19th Amendment, granting women the right to vote, was ratified on August 18, 1920.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "pol_015",
+      "category": "Politics",
+      "questionText": "Who was the first female Vice President of the United States?",
+      "options": ["Hillary Clinton", "Kamala Harris", "Sarah Palin", "Geraldine Ferraro"],
+      "correctAnswerIndex": 1,
+      "explanation": "Kamala Harris became the first female Vice President when she was inaugurated on January 20, 2021.",
+      "difficulty": "easy"
+    }
+  ]
+}
