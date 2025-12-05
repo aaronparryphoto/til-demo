@@ -3,18 +3,13 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Question, UserAnswer, QuizState, UserStats } from '@/lib/types';
+import { Question, UserAnswer, QuizState } from '@/lib/types';
 import {
   getCurrentSession,
   saveCurrentSession,
   clearCurrentSession,
-  getUserStats,
-  saveUserStats,
-  saveQuizAttempt,
-  getQuizAttempt,
 } from '@/lib/quiz-storage';
-import { createQuizAttempt, updateStats } from '@/lib/quiz-logic';
-import { getTodayDate } from '@/lib/date-utils';
+import { hasCompletedToday, submitQuizAttempt } from '@/server/actions/quiz-actions';
 
 interface UseQuizStateProps {
   questions: Question[];
@@ -22,15 +17,24 @@ interface UseQuizStateProps {
 }
 
 export function useQuizState({ questions, date }: UseQuizStateProps) {
-  // Check if already completed today
-  const todayAttempt = getQuizAttempt(date);
-  const alreadyCompleted = !!todayAttempt;
-
   // Initialize state
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<UserAnswer[]>([]);
-  const [isComplete, setIsComplete] = useState(alreadyCompleted);
-  const [stats, setStats] = useState<UserStats>(getUserStats());
+  const [isComplete, setIsComplete] = useState(false);
+  const [alreadyCompleted, setAlreadyCompleted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Check if already completed today
+  useEffect(() => {
+    async function checkCompletion() {
+      const completed = await hasCompletedToday();
+      setAlreadyCompleted(completed);
+      if (completed) {
+        setIsComplete(true);
+      }
+    }
+    checkCompletion();
+  }, []);
 
   // Load existing session if available and not completed
   useEffect(() => {
@@ -84,23 +88,37 @@ export function useQuizState({ questions, date }: UseQuizStateProps) {
     }
   }, [currentQuestionIndex, questions.length]);
 
-  const completeQuiz = useCallback(() => {
-    const attempt = createQuizAttempt(date, answers, questions);
+  const completeQuiz = useCallback(async () => {
+    if (isSubmitting) return;
 
-    // Save attempt
-    saveQuizAttempt(attempt);
+    try {
+      setIsSubmitting(true);
 
-    // Update stats
-    const newStats = updateStats(stats, attempt);
-    saveUserStats(newStats);
-    setStats(newStats);
+      // Calculate score
+      const score = answers.filter((a) => a.isCorrect).length;
 
-    // Clear session
-    clearCurrentSession();
+      // Submit to server
+      await submitQuizAttempt({
+        date,
+        answers: answers.map((a) => ({
+          questionId: a.questionId,
+          selectedAnswerIndex: a.selectedAnswerIndex,
+          isCorrect: a.isCorrect,
+        })),
+        score,
+      });
 
-    // Mark as complete
-    setIsComplete(true);
-  }, [date, answers, questions, stats]);
+      // Clear session
+      clearCurrentSession();
+
+      // Mark as complete
+      setIsComplete(true);
+    } catch (error) {
+      console.error('Error submitting quiz:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  }, [date, answers, isSubmitting]);
 
   const resetQuiz = useCallback(() => {
     setCurrentQuestionIndex(0);
@@ -116,7 +134,7 @@ export function useQuizState({ questions, date }: UseQuizStateProps) {
     answers,
     isComplete,
     alreadyCompleted,
-    stats,
+    isSubmitting,
 
     // Actions
     handleAnswer,

@@ -1,7 +1,7 @@
 // Date utilities for daily quiz selection
 
 import { Question, QuizCategory, CATEGORY_ORDER, QUESTIONS_PER_DAY } from './types';
-import questionsData from '@/data/questions.json';
+import questionsData from '../../data/questions.json';
 
 /**
  * Get today's date in YYYY-MM-DD format
