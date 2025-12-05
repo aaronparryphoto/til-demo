@@ -79,15 +79,6 @@ export function useQuizState({ questions, date }: UseQuizStateProps) {
     [currentQuestion]
   );
 
-  const nextQuestion = useCallback(() => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(prev => prev + 1);
-    } else {
-      // Quiz complete
-      completeQuiz();
-    }
-  }, [currentQuestionIndex, questions.length]);
-
   const completeQuiz = useCallback(async () => {
     if (isSubmitting) return;
 
@@ -119,6 +110,15 @@ export function useQuizState({ questions, date }: UseQuizStateProps) {
       setIsSubmitting(false);
     }
   }, [date, answers, isSubmitting]);
+
+  const nextQuestion = useCallback(() => {
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(prev => prev + 1);
+    } else {
+      // Quiz complete
+      completeQuiz();
+    }
+  }, [currentQuestionIndex, questions.length, completeQuiz]);
 
   const resetQuiz = useCallback(() => {
     setCurrentQuestionIndex(0);

@@ -3,11 +3,16 @@
 
 import * as path from 'path';
 import { promises as fs } from 'fs';
+import { config } from 'dotenv';
 import { Migrator, FileMigrationProvider } from 'kysely';
-import { db } from '@/server/connections/db';
-import 'dotenv/config';
+
+// Load environment variables from .env.local FIRST
+config({ path: path.join(process.cwd(), '.env.local') });
 
 async function migrateToLatest() {
+  // Dynamically import db after env vars are loaded
+  const { db } = await import('@/server/connections/db');
+
   const migrator = new Migrator({
     db,
     provider: new FileMigrationProvider({

@@ -1,7 +1,7 @@
 // Seed questions from questions.json into the database
 
 import { db } from '@/server/connections/db';
-import questionsData from '../../../data/questions.json';
+import questionsData from '../../../../data/questions.json';
 
 interface QuestionData {
   id: string;
