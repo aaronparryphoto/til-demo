@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Container } from '@/components/layout/Container';
 import { QuestionCard } from '@/components/quiz/QuestionCard';
@@ -22,17 +23,13 @@ export default function QuizPage() {
     nextQuestion,
   } = useQuizState({ questions, date });
 
-  // Redirect if already completed
-  if (alreadyCompleted) {
-    router.push('/results');
-    return null;
-  }
-
-  // Redirect to results when complete
-  if (isComplete) {
-    router.push('/results');
-    return null;
-  }
+  // Handle redirects in useEffect to avoid setState during render
+  // Only redirect on fresh completion to avoid redirect loop
+  useEffect(() => {
+    if (isComplete && !alreadyCompleted) {
+      router.push('/results');
+    }
+  }, [isComplete, alreadyCompleted, router]);
 
   if (!isReady || !currentQuestion) {
     return (

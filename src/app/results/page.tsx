@@ -10,8 +10,9 @@ import { ShareResults } from '@/components/quiz/ShareResults';
 import { StatsPanel } from '@/components/quiz/StatsPanel';
 import { CategoryBadge } from '@/components/quiz/CategoryBadge';
 import { useDailyQuiz } from '@/hooks/useDailyQuiz';
-import { getQuizAttempt, getUserStats } from '@/lib/quiz-storage';
+import { getQuizAttempt, getUserStats, saveQuizAttempt } from '@/lib/quiz-storage';
 import { CATEGORY_ORDER, QuizAttempt, UserStats } from '@/lib/types';
+import { getQuizAttempt as getQuizAttemptFromServer } from '@/server/actions/quiz-actions';
 
 export default function ResultsPage() {
   const router = useRouter();
@@ -21,11 +22,26 @@ export default function ResultsPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const loadedAttempt = getQuizAttempt(date);
-    const loadedStats = getUserStats();
-    setAttempt(loadedAttempt);
-    setStats(loadedStats);
-    setIsLoading(false);
+    async function loadResults() {
+      let loadedAttempt = getQuizAttempt(date);
+
+      // Fallback to server if not in localStorage
+      if (!loadedAttempt) {
+        const serverAttempt = await getQuizAttemptFromServer(date);
+        if (serverAttempt) {
+          // Save to localStorage for next time
+          saveQuizAttempt(serverAttempt);
+          loadedAttempt = serverAttempt;
+        }
+      }
+
+      const loadedStats = getUserStats();
+      setAttempt(loadedAttempt);
+      setStats(loadedStats);
+      setIsLoading(false);
+    }
+
+    loadResults();
   }, [date]);
 
   // Redirect if not completed yet

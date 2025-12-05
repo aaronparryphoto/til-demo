@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Container } from '@/components/layout/Container';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
@@ -11,8 +12,10 @@ import { formatDate } from '@/lib/date-utils';
 import { QuizAttempt } from '@/lib/types';
 import { OnboardingModal } from '@/components/onboarding/OnboardingModal';
 import { needsOnboarding, getCurrentUser } from '@/server/actions/user-actions';
+import { getQuizAttempt as getQuizAttemptFromServer } from '@/server/actions/quiz-actions';
 
 export default function Home() {
+  const router = useRouter();
   const { date, isReady } = useDailyQuiz();
   const [todayAttempt, setTodayAttempt] = useState<QuizAttempt | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -20,10 +23,30 @@ export default function Home() {
   const [currentUserName, setCurrentUserName] = useState('');
 
   useEffect(() => {
-    const attempt = getQuizAttempt(date);
-    setTodayAttempt(attempt);
-    setIsLoading(false);
-  }, [date]);
+    async function checkCompletion() {
+      // Check localStorage first
+      let attempt = getQuizAttempt(date);
+
+      if (attempt) {
+        // Already completed in localStorage, redirect to results
+        router.push('/results');
+        return;
+      }
+
+      // Fallback to server check
+      const serverAttempt = await getQuizAttemptFromServer(date);
+      if (serverAttempt) {
+        // Redirect to results
+        router.push('/results');
+        return;
+      }
+
+      setTodayAttempt(null);
+      setIsLoading(false);
+    }
+
+    checkCompletion();
+  }, [date, router]);
 
   // Check if user needs onboarding
   useEffect(() => {

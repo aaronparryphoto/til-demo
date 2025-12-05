@@ -3,11 +3,12 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Question, UserAnswer, QuizState } from '@/lib/types';
+import { Question, UserAnswer, QuizState, QuizAttempt } from '@/lib/types';
 import {
   getCurrentSession,
   saveCurrentSession,
   clearCurrentSession,
+  saveQuizAttempt,
 } from '@/lib/quiz-storage';
 import { hasCompletedToday, submitQuizAttempt } from '@/server/actions/quiz-actions';
 
@@ -82,6 +83,13 @@ export function useQuizState({ questions, date }: UseQuizStateProps) {
   const completeQuiz = useCallback(async () => {
     if (isSubmitting) return;
 
+    // Prevent duplicate submission
+    if (alreadyCompleted) {
+      console.warn('Quiz already completed, skipping submission');
+      setIsComplete(true);
+      return;
+    }
+
     try {
       setIsSubmitting(true);
 
@@ -99,6 +107,35 @@ export function useQuizState({ questions, date }: UseQuizStateProps) {
         score,
       });
 
+      // Build category breakdown
+      const categoryBreakdown: QuizAttempt['categoryBreakdown'] = {
+        History: false,
+        Science: false,
+        Geography: false,
+        'Pop Culture': false,
+        Politics: false,
+      };
+
+      // Map each answer to its question's category
+      answers.forEach((answer) => {
+        const question = questions.find(q => q.id === answer.questionId);
+        if (question) {
+          categoryBreakdown[question.category] = answer.isCorrect;
+        }
+      });
+
+      // Build complete QuizAttempt object
+      const quizAttempt: QuizAttempt = {
+        date,
+        answers,
+        score,
+        completedAt: new Date().toISOString(),
+        categoryBreakdown,
+      };
+
+      // Save to localStorage
+      saveQuizAttempt(quizAttempt);
+
       // Clear session
       clearCurrentSession();
 
@@ -109,7 +146,7 @@ export function useQuizState({ questions, date }: UseQuizStateProps) {
     } finally {
       setIsSubmitting(false);
     }
-  }, [date, answers, isSubmitting]);
+  }, [date, answers, questions, isSubmitting, alreadyCompleted]);
 
   const nextQuestion = useCallback(() => {
     if (currentQuestionIndex < questions.length - 1) {
